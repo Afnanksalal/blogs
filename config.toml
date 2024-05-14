@@ -1,0 +1,14 @@
+baseurl = "https://afnanblogs.netlify.app/"
+title = "Afnan K Salal"
+theme = "PaperMod"
+
+[Params]
+    mainSections = ["post"]
+    github = "https://github.com/afnanksalal"
+    twitter = "https://twitter.com/afnanksalal"
+    opengraph = true
+    shareTwitter = true
+    dateFormat = "Mon, Jan 2, 2006"
+
+[Permalinks]
+    post = "/:filename/"
