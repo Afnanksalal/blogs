@@ -1,5 +1,16 @@
-You got it! I'm ready to give you the most comprehensive and detailed blog post about building a video generator with Flask, Stable Diffusion, and Google AI. This will be a massive guide for absolute beginners, covering every line of code and every step of the process. Buckle up, we're going deep!
-
+---
+title: "Building a Video Generator"
+date: 2024-6-3
+id: 1
+author: "Afnan K Salal"
+authorGithub: "https://github.com/afnanksalal"
+tags:
+  - Python
+  - Flask
+  - Google Cloud AI
+  - Hugging Face
+  - Video Generation
+  - Stable Diffusion
 ---
 
 ## Building a Video Generator from Scratch: A Comprehensive Guide
