@@ -47,11 +47,8 @@ pip install streamlit transformers moviepy gTTS langchain langchain_google_genai
 *   **Streamlit:**  A Python library for building interactive web applications. It makes creating data-driven web apps super easy, even for beginners.
 *   **Transformers:**  A library for working with state-of-the-art deep learning models, including those used for text summarization and speech recognition. 
 *   **MoviePy:**  For processing video files and extracting audio.
-*   **gTTS:**  A library for text-to-speech conversion.
 *   **LangChain:**  A framework for building and interacting with AI applications.
 *   **LangChain Google GenAI:**  A component of LangChain that lets you use Google Cloud AI models.
-*   **Pillow:**  For image processing.
-*   **Requests:**  Making API calls to web services.
 *   **Toml:**  For handling configuration files in TOML format.
 
 **3. Obtain API Keys**
