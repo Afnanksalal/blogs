@@ -1,5 +1,5 @@
 ---
-title: "Turn Your Videos into Concise Keynotes: A Beginner's Guide to AI-Powered Video Summarization"
+title: "Turn Your Videos into Keynotes"
 date: 2024-6-4
 id: 2
 author: "Afnan K Salal"
