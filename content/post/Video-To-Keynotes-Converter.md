@@ -1,8 +1,9 @@
 ---
 title: "Turn Your Videos into Concise Keynotes: A Beginner's Guide to AI-Powered Video Summarization"
-date: 2024-12-04
+date: 2024-6-4
 id: 2
-author: "Afnan K Salal" 
+author: "Afnan K Salal"
+authorGithub: "https://github.com/afnanksalal"
 tags:
   - Python
   - Streamlit
