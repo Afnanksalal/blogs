@@ -1,5 +1,5 @@
 ---
-title: "Phases of Software Development - A Detailed Exploration"
+title: "Phases of Software Development"
 date: 2024-7-28
 id: 5
 author: "Afnan K Salal" 
@@ -10,10 +10,6 @@ tags:
   - Life Cycle Models
   - SDLC
 ---
-
-##  Phases of Software Development - A Detailed Exploration
-
-This document delves deeply into the crucial concepts presented in Phases of Software Development. We'll explore each topic with detailed explanations, illustrative diagrams, and comprehensive answers, preparing you to confidently tackle real-world software development challenges.
 
 **1. Defining Software Engineering**
 
