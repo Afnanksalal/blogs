@@ -3,6 +3,7 @@ title: "Phases of Software Development - A Detailed Exploration"
 date: 2024-7-28
 id: 5
 author: "Afnan K Salal" 
+authorGithub: "https://github.com/afnanksalal"
 tags:
   - Software Engineering
   - Software Development
