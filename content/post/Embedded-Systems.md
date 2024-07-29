@@ -92,7 +92,7 @@ To effectively program and utilize the ATmega32's capabilities, it's essential t
       v
 +-----+--------------------------------------+
 |     |                                      |
-| CPU |-------->  Program Memory (Flash)  |
+| CPU |-------->  Program Memory (Flash)     |
 |     |                                      |
 +-----+--------------------------------------+
       ^
