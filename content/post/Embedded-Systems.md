@@ -49,7 +49,7 @@ This integration simplifies system design, reduces component count, and enhances
 
 Within the vast and diverse world of microcontrollers, Atmel's AVR family stands as a testament to elegant design and enduring impact. Developed in the mid-1990s by two Norwegian students, Alf-Egil Bogen and Vegard Wollan, AVR microcontrollers rapidly gained popularity for their RISC (Reduced Instruction Set Computing) architecture, streamlined instruction set, and efficient execution.
 
-**AVR: **
+**AVR:**
 
 The AVR acronym itself holds a dual meaning, reflecting both its technical underpinnings and its origins: **A**dvanced **V**irtual **R**ISC, while also paying tribute to its creators, **A**lf and **V**egard's **R**ISC. This duality embodies the microcontroller's blend of sophisticated technology and user-friendly design.
 
@@ -100,15 +100,15 @@ To effectively program and utilize the ATmega32's capabilities, it's essential t
       |
       v
 +-----+---------------------+     +---------------------+
-| GPRs |     I/O Registers  |     |       SRAM        |
-|     |                     |     |                     |
+| GPRs |     I/O Registers  |     |       SRAM          |
+|      |                    |     |                     |
 +-----+---------------------+     +---------------------+
       ^                     ^
       | Address Bus (16-bit for Data Memory)
       |
-+-----+
++--------+
 | EEPROM |
-+-----+
++--------+
 ```
 
 Let's break down the key components and their roles:
@@ -136,9 +136,9 @@ The ATmega32's data memory is logically organized as a single address space, eve
 +-----------------------+  0x0000  (Lowest Address)
 | General Purpose Registers |
 +-----------------------+  0x0020
-|       I/O Registers      |
+|       I/O Registers       |
 +-----------------------+  0x0060
-|          SRAM           |
+|          SRAM             |
 +-----------------------+  0x085F  (Highest Address)
 ```
 
