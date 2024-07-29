@@ -34,7 +34,7 @@ The distinction between microcontrollers and microprocessors lies not only in th
 | **Power Consumption** | Optimized for low power operation              | Higher due to greater computational capabilities   |
 | **Applications**    | Embedded systems, control applications          | Computers, smartphones, high-performance systems |
 
-**Microcontrollers: **
+**Microcontrollers:**
 
 The beauty of a microcontroller lies in its self-contained nature. Imagine it as a miniature computer on a single chip, housing all the essential components to function independently:
 
@@ -53,7 +53,7 @@ Within the vast and diverse world of microcontrollers, Atmel's AVR family stands
 
 The AVR acronym itself holds a dual meaning, reflecting both its technical underpinnings and its origins: **A**dvanced **V**irtual **R**ISC, while also paying tribute to its creators, **A**lf and **V**egard's **R**ISC. This duality embodies the microcontroller's blend of sophisticated technology and user-friendly design.
 
-**The AVR Family: **
+**The AVR Family:**
 
 As the AVR architecture matured, it branched out into different series, each tailored to meet the demands of specific applications:
 
