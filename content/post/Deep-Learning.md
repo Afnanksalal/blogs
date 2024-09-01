@@ -38,9 +38,9 @@ At the core of neural networks lies the concept of a neuron, the basic computati
 **Mathematical Formulation**:
 Given input features \( x_1, x_2, \ldots, x_n \), associated weights \( w_1, w_2, \ldots, w_n \), and bias \( b \), the output \( y \) of a single perceptron can be expressed as:
 
-\[
+$$
 y = \sigma\left(\sum_{i=1}^{n} w_i \cdot x_i + b\right)
-\]
+$$
 
 Where \( \sigma(\cdot) \) is the activation function.
 
