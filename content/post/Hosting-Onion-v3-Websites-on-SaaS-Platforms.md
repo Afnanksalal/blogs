@@ -97,7 +97,7 @@ RUN echo "server { \
 
 # Generate a single custom vanity .onion address using mkp224o
 RUN mkdir -p /var/lib/tor/onion_service && \
-    /mkp224o/mkp224o -d /var/lib/tor/onion_service -T 3 -n 1 chickenfeedfarm && \
+    /mkp224o/mkp224o -d /var/lib/tor/onion_service -T 3 -n 1 yourpatternhere && \
     chmod -R 700 /var/lib/tor/onion_service
 
 # Fix ownership of the onion_service directory for the debian-tor user
@@ -135,7 +135,7 @@ CMD service nginx start && \
 *   **`RUN git clone ... && cd /mkp224o && ./autogen.sh ...`**: Clones, builds, and installs `mkp224o`, a tool for generating vanity Onion addresses (addresses that contain specific keywords).  **Important:**  Generating a vanity address significantly increases the deployment time. Consider removing this step if you don't need a custom address. Also, generating a vanity address is resource intensive, especially for more complex prefixes.
 *   **`COPY ./static /var/www/html/`**: Copies your website's static files into the Nginx document root.
 *   **`RUN echo "server { ... }" > /etc/nginx/sites-available/default ...`**: Configures Nginx to serve the static website on `127.0.0.1:8080`.  This internal port is then exposed via the Tor Onion Service.
-*   **`RUN mkdir -p /var/lib/tor/onion_service && /mkp224o/mkp224o ...`**:  Generates the Onion Service keypair and hostname using `mkp224o`. This is where the custom address prefix (`chickenfeedfarm`) is specified.  If you skip the vanity address generation, you'll need to use `tor --keygen HiddenServiceDir /var/lib/tor/onion_service/` instead.
+*   **`RUN mkdir -p /var/lib/tor/onion_service && /mkp224o/mkp224o ...`**:  Generates the Onion Service keypair and hostname using `mkp224o`. This is where the custom address prefix (`yourpatternhere`) is specified.  If you skip the vanity address generation, you'll need to use `tor --keygen HiddenServiceDir /var/lib/tor/onion_service/` instead.
 *   **`RUN chown -R debian-tor:debian-tor /var/lib/tor/onion_service`**: Sets the correct ownership for the Onion Service directory, ensuring that the `debian-tor` user can access it.
 *   **`RUN echo "HiddenServiceDir ... " >> /etc/tor/torrc`**: Configures Tor to expose the Onion Service. The critical line is `HiddenServicePort 80 127.0.0.1:8080`, which maps external port 80 (on the Tor network) to the internal Nginx port.  Also, sets Tor to log to a file.
 *   **`RUN mkdir -p /var/www/dummy ...`**: Creates a dummy website that listens on port 8081.  This acts as a fallback server if Tor or Nginx fails.
@@ -153,15 +153,7 @@ Koyeb is a serverless platform that makes it easy to deploy Docker containers.
 3.  **Choose a Deployment Method**: Select "Docker Image" as the deployment method.
 4.  **Specify the Docker Image**: Provide the Docker image name you built from the Dockerfile.
 5.  **Configure Port(s)**:  Koyeb automatically detects the exposed ports. If not, specify port `8081` for the dummy server.  You **cannot** directly expose the Tor port. Tor handles external connections.
-6.  **Define Environment Variables (Optional)**:  You can define environment variables for configuration.
-7.  **Deploy the App**: Deploy the app.
-
-**Important Considerations for Koyeb:**
-
-*   **Persistence**: Koyeb does not directly support persistent volumes in the same way as other platforms. Therefore, the generated Onion address will likely change on each deployment or restart. You would need to implement a workaround, like storing the `/var/lib/tor/onion_service` directory in a persistent storage solution and mounting it into the container.
-*   **Logging**: Koyeb provides built-in logging, allowing you to monitor the Tor logs.
-*   **Custom Domains**:  Since you are deploying an Onion Service, custom domains are not relevant.
-*  **Health Checks**:  Koyeb provides health checks which can verify that the fallback website at port 8081 is running, but cannot directly test the Tor service.
+6.  **Deploy the App**: Deploy the app.
 
 #### **3.4 Deploying on Render**
 
@@ -177,20 +169,13 @@ Render is another platform that simplifies deploying Docker containers.
     *   Choose a name for your service.
     *   Select a region.
     *   Choose an instance type.
-5.  **Define Environment Variables (Optional)**: You can define environment variables to customize the deployment.
-6.  **Deploy the Service**: Deploy the service.  Render will automatically build the Docker image and deploy it.
-
-**Important Considerations for Render:**
-
-*   **Persistent Disk**: Render offers persistent disks, which are essential for preserving the Onion Service's private key across deployments. You'll need to create a persistent disk and mount it to the `/var/lib/tor/onion_service` directory within the container.  This is the **critical** step for maintaining a consistent Onion address.
-*   **Logging**: Render provides built-in logging that can be used to monitor the Tor logs.
-*   **Health Checks**: Render allows you to configure health checks. However, you can only check the dummy webserver running on port 8081 because you cannot directly check the Tor service.
+5.  **Deploy the Service**: Deploy the service.  Render will automatically build the Docker image and deploy it.
 
 #### **3.5 General Deployment Notes**
 
 *   **Monitoring Tor Logs**:  Regardless of the platform you choose, it's crucial to monitor the Tor logs for errors and warnings.  These logs will provide valuable insights into the health of your Onion Service.
 *   **Security**: Hosting an Onion Service requires careful consideration of security. Keep Tor and other software up-to-date, and follow best practices for server security. Consider disabling SSH access to your container to minimize the attack surface.
-*   **Vanity Addresses**: If you are using `mkp224o` to generate a vanity address, understand that this process can take a significant amount of time and resources.  For faster deployments, consider using a randomly generated Onion address.  If you skip the vanity generation, then instead of  `/mkp224o/mkp224o -d /var/lib/tor/onion_service -T 3 -n 1 chickenfeedfarm`, run `tor --keygen HiddenServiceDir /var/lib/tor/onion_service/`.
+*   **Vanity Addresses**: If you are using `mkp224o` to generate a vanity address, understand that this process can take a significant amount of time and resources.  For faster deployments, consider using a randomly generated Onion address.  If you skip the vanity generation, then instead of  `/mkp224o/mkp224o -d /var/lib/tor/onion_service -T 3 -n 1 yourpatternhere`, run `tor --keygen HiddenServiceDir /var/lib/tor/onion_service/`.
 
 ### **4. Security Best Practices for Onion Services**
 
