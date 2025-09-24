@@ -1,6 +1,6 @@
 ---
 title: "A Robotics Beginner's Guide: Installing ROS 2 and Gazebo"
-date: 2025-9-24
+date: 2025-09-24
 id: 10
 author: "Afnan K Salal"
 authorGithub: "https://github.com/afnanksalal"
